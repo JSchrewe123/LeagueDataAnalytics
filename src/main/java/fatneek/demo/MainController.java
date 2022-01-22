@@ -1,5 +1,8 @@
 package fatneek.demo;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,13 +18,18 @@ public class MainController {
 	public String displayHome(Model model) {
 		Player player = new Player();
 		model.addAttribute("player", player);
+		List<String> listServer = Arrays.asList("EUW", "EUNE", "NA");
+        model.addAttribute("listServer", listServer);
 		return "home";
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/home")
 	public String nameSubmit(@ModelAttribute("player") Player player, Model model) {
-	  System.out.println(player);
-	  model.addAttribute("player", player);
-	  return "result";
+		//once api works, actual player info to be displayed
+		System.out.println(player);
+	    model.addAttribute("player", player);
+		List<String> listServer = Arrays.asList("EUW", "EUNE", "NA");
+        model.addAttribute("listServer", listServer);
+	    return "home2";
 	}
 }

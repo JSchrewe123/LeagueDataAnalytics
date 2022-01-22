@@ -4,15 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>League Analytics</title>
+    <style type="text/css">
+        body {
+            background-color: lightblue;
+        }
+
+        input[type=text] {
+            display: inline-block;
+            width: 400;
+            height: 50;
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(70, 70, 218);
+        }
+
+        div.form {
+            display: block;
+            text-align: center;
+        }
+
+        select {
+        width: 75px;
+        height: 40px;
+        padding: 10px;
+        font-size: 15px;
+      }
+
+    </style>
 </head>
 <body>
-    <h1>Welcome to data something</h1>
-
-    <form action="#" th:action="@{/home}" th:object="${player}" method="post">
-    	<p>playerName: <input type="text" th:field="*{playerName}" /></p>
-        <p><input type="submit" value="Submit" /></p>
-    </form>
-
+    <h1>Looser's Queue?</h1>
+    <div class="form">
+        <form action="#" th:action="@{/home}" th:object="${player}" method="post">
+            <select th:field="*{server}">
+                <option th:each="p : ${listServer}" th:value="${p}" th:text="${p}" />
+            </select>
+            <input type="text" placeholder="Summoner name"th:field="*{playerName}" />
+        </form>
+    </div>
 </body>
 </html>
