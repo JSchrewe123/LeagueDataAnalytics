@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LEagueTHingApplication {
+public class StartLeague {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LEagueTHingApplication.class, args);
+		SpringApplication.run(StartLeague.class, args);
 	}
 }
