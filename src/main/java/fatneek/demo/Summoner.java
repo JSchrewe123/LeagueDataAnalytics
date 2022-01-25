@@ -149,6 +149,10 @@ public class Summoner {
         return reg;
     }
 
+    public String getBigReg() {
+        return bigReg;
+    }
+
     public String getSoloRank() {
         return soloRank;
     }
@@ -274,9 +278,9 @@ public class Summoner {
     }
 
     // returns summoners matchIds
-    public LinkedList<String> getMathcIds(String data) throws IOException, JSONException {
+    public LinkedList<String> getMatchIds() throws IOException, JSONException {
         URL url = new URL("https://" + bigReg + ".api.riotgames.com/lol/match/v5/matches/by-puuid/"
-                + getSummonerData("puuid") + "/ids?start=0&count=20&api_key=" + key);
+                + getSummonerData("puuid") + "/ids?start=0&count=10&api_key=" + key);
         Scanner sc = new Scanner(url.openStream());
         StringBuffer sb = new StringBuffer();
         while (sc.hasNext()) {
@@ -284,7 +288,6 @@ public class Summoner {
         }
         // Retrieving the String from the String Buffer object
         String stringMatches = sb.toString();
-        // System.out.println(stringMatches);
 
         boolean found = false;
         LinkedList<String> ll = new LinkedList<String>();

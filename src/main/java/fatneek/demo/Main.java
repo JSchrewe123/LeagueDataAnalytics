@@ -21,18 +21,10 @@ public class Main {
         // System.out.println(puuid);
         // String id = sum.getSummonerData("puuid");
         System.out.println(sum);
-        System.out.println(sum.getFlexL());
-        System.out.println(sum.getFlexLP());
-        System.out.println(sum.getFlexPromos());
-        System.out.println(sum.getflexRank());
-        System.out.println(sum.getFlexW());
-        System.out.println(sum.getFlexWr());
-        System.out.println(sum.getSoloL());
-        System.out.println(sum.getSoloLP());
-        System.out.println(sum.getSoloPromos());
-        System.out.println(sum.getSoloRank());
-        System.out.println(sum.getSoloW());
-        System.out.println(sum.getSoloWr());
+
+        MatchHistory mh = new MatchHistory(sum);
+        System.out.println(mh);
+
     }
 
 }
