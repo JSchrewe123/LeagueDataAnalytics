@@ -15,7 +15,7 @@ import org.json.JSONStringer;
 public class Summoner {
 
     private String name;
-    private String key = "RGAPI-91eb14e9-5317-4aaf-9e9d-69434e9862e5";
+    private String key = Main.getKey();
     private String reg;
     private String bigReg;
     private String apiName;

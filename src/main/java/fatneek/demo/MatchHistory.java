@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class MatchHistory {
-    private String key = "RGAPI-91eb14e9-5317-4aaf-9e9d-69434e9862e5";
+    private String key = Main.getKey();
     private Match[] match;
 
-    public MatchHistory(){
+    public MatchHistory(MatchHistory mh) {
 
     }
 
@@ -27,6 +27,11 @@ public class MatchHistory {
         for (int i = 0;i<match.length;i++){
             matches = matches+this.match[i]+"\r\n";
         }
+        return matches;
+    }
+
+    public Match[] getMatches(){
+        Match[]matches = match;
         return matches;
     }
 }
